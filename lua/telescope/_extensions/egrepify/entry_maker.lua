@@ -225,7 +225,17 @@ local function title_display(filename, _, opts)
         } or nil,
       }
   else
-    return display
+    return display,
+      {
+        {
+          { 0, end_filename },
+          opts.filename_hl,
+        },
+        suffix_ ~= "" and {
+          { end_filename, end_suffix },
+          opts.title_suffix_hl,
+        } or nil,
+      }
   end
 end
 
